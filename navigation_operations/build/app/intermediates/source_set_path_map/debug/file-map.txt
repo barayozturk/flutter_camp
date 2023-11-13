@@ -1,0 +1,12 @@
+com.example.navigation_operations.app-jetified-window-1.0.0-beta04-0 C:\Users\baray\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+com.example.navigation_operations.app-jetified-annotation-experimental-1.1.0-1 C:\Users\baray\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.navigation_operations.app-core-1.6.0-2 C:\Users\baray\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
+com.example.navigation_operations.app-jetified-window-java-1.0.0-beta04-3 C:\Users\baray\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.navigation_operations.app-debug-4 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\android\app\src\debug\res
+com.example.navigation_operations.app-main-5 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\android\app\src\main\res
+com.example.navigation_operations.app-pngs-6 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\build\app\generated\res\pngs\debug
+com.example.navigation_operations.app-resValues-7 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\build\app\generated\res\resValues\debug
+com.example.navigation_operations.app-rs-8 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\build\app\generated\res\rs\debug
+com.example.navigation_operations.app-mergeDebugResources-9 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.navigation_operations.app-mergeDebugResources-10 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.navigation_operations.app-merged_res-11 C:\Users\baray\OneDrive\Belgeler\GitHub\flutter_camp\navigation_operations\build\app\intermediates\merged_res\debug

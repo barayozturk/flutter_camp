@@ -1,0 +1,10 @@
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/icudtl.dat
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/baray/OneDrive/Belgeler/GitHub/flutter_camp/navigation_operations/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
