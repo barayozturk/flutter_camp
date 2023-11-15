@@ -3,6 +3,7 @@ import 'package:horoscope_guide/burc_item.dart';
 import 'package:horoscope_guide/data/strings.dart';
 import 'package:horoscope_guide/models/burc.dart';
 
+// ignore: must_be_immutable
 class BurcListesi extends StatelessWidget {
   late List<Burc> tumBurclar;
   
