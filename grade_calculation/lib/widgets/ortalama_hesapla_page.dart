@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:grade_calculation/constants/constants.dart';
 import 'package:grade_calculation/data/data_helper.dart';
+import 'package:grade_calculation/models/ders.dart';
+import 'package:grade_calculation/widgets/ders_listesi.dart';
+import 'package:grade_calculation/widgets/harf_dropdown_widget.dart';
+import 'package:grade_calculation/widgets/kredi_dropdown_widget.dart';
 import 'package:grade_calculation/widgets/ortalama_g%C3%B6ster.dart';
 
 class OrtalamaHesaplaPage extends StatefulWidget {
@@ -12,11 +16,14 @@ class OrtalamaHesaplaPage extends StatefulWidget {
 
 class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  double secilenDeger = 4;
+  double secilenKrediDeger = 1;
+  double secilenHarfDeger = 1;
+  String girilenDersAdi = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -38,14 +45,20 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
               ),
               Expanded(
                 flex: 1,
-                child: OrtalamaGoster(dersSayisi: 5, ortalama: 2.58),
+                child: OrtalamaGoster(
+                  dersSayisi: DataHelper.tumEklenenDersler.length, 
+                  ortalama: DataHelper.ortalamaHesapla()),
               ),
             ],
           ),
           Expanded(
-            child: Container(
-              child: Text('Liste buraya gelecek'),
-              color: Colors.blue,
+            child:DersListesi(
+              onElemanCikarildi: (index){
+                DataHelper.tumEklenenDersler.removeAt(index);
+                setState(() {
+                  
+                });
+              },
             ),
           ),
         ],
@@ -58,24 +71,44 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
       key: formKey,
       child: Column(
         children: [
-          _buildTextFormField(),
+          Padding(
+            padding: Sabitler.yatayPadding8, 
+            child: _buildTextFormField(),
+            ),
+          SizedBox(
+            height: 5,
+          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildHarfler(),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.ac_unit),
+              Expanded(
+                child: Padding(
+                  padding: Sabitler.yatayPadding8,
+                  child: HarfDropdownWidget(
+                    onHarfSecildi: (harf){
+                      secilenHarfDeger = harf;
+                    },
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: Sabitler.yatayPadding8,
+                  child: KrediDropdownList(onKrediSecildi: (kredi){
+                    secilenKrediDeger = kredi;
+                  }),
+                ),
               ),
               IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.ac_unit),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.ac_unit),
+                onPressed: _dersekleveOrtalamaHesapla,
+                icon: Icon(Icons.arrow_forward_ios_sharp),
+                color: Sabitler.anaRenk,
+                iconSize: 30,
               ),
             ],
+          ),
+        SizedBox(
+          height: 5,
           ),
         ],
       ),
@@ -84,10 +117,24 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
 
   Widget _buildTextFormField() {
     return TextFormField(
+      onSaved: (deger){
+        setState(() {
+          girilenDersAdi = deger!;
+        });
+      },
+
+      validator: (s){
+        if(s!.length<=0){
+          return 'Ders Adini giriniz';
+        }else{
+          return null;
+        }
+      },
       decoration: InputDecoration(
         hintText: 'Matematik',
         border: OutlineInputBorder(
           borderRadius: Sabitler.borderRadius,
+          borderSide: BorderSide.none,
         ),
         filled: true,
         fillColor: Sabitler.anaRenk.shade100.withOpacity(0.3),
@@ -95,26 +142,22 @@ class _OrtalamaHesaplaPageState extends State<OrtalamaHesaplaPage> {
     );
   }
 
-  Widget _buildHarfler() {
-    
-    return Container(
-      padding: Sabitler.dropDownPadding,
-      decoration: BoxDecoration(
-        color: Sabitler.anaRenk.shade100.withOpacity(0.3),
-        borderRadius: Sabitler.borderRadius,
-      ),
-      child: DropdownButton<double>(
-        value: secilenDeger,
-        elevation: 16,
-        iconEnabledColor: Sabitler.anaRenk.shade200,
-        items: DataHelper.tumDerslerinHarfleri(),
-        underline: Container(),
-        onChanged: (deger) {
-          setState(() {
-            secilenDeger = deger!;
-          });
-        },
-      ),
-    );
+  
+
+
+  
+  _dersekleveOrtalamaHesapla() {
+    if(formKey.currentState!.validate()){
+      formKey.currentState!.save();
+      var eklenecekDers = Ders(
+        ad: girilenDersAdi, 
+        harfDegeri: secilenHarfDeger, 
+        krediDegeri: secilenKrediDeger);
+      DataHelper.dersEkle(eklenecekDers);
+      setState(() {
+        
+      });
+    }
   }
+
 }
