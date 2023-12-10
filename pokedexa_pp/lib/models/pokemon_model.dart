@@ -27,6 +27,11 @@ class PokemonModel {
     List<Evolution>? prevEvolution;
     List<Evolution>? nextEvolution;
 
+    @override
+    String toString(){
+      return name!;
+    }
+
     PokemonModel({
         this.id,
         this.num,
